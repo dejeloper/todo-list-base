@@ -1,0 +1,12 @@
+.input-text-todo {
+  border-radius: 10px;
+  border: 1px solid #664caf;
+  margin: 0 24px;
+  padding: 16px 10px;
+  width: 20rem;
+  box-shadow: 0 5px 50px rgb(109, 132, 151);
+}
+
+.input-text-todo:focus {
+  outline-color: skyblue;
+}
