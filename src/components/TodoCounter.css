@@ -1,0 +1,19 @@
+.content-todo-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-todo-counter {
+  font-size: 24;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.title-todo-counter span {
+  font-weight: bold;
+  margin: 0 5px;
+}
