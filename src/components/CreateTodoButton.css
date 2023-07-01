@@ -1,0 +1,17 @@
+.btn-create-item {
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+  background-color: #1ead22;
+  text-align: center;
+  cursor: pointer;
+  margin: 10px 15px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #a8a8a8;
+}
+.content-create-item {
+  display: flex;
+  top: 0;
+  right: 0;
+}
