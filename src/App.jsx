@@ -40,7 +40,21 @@ const defaultTodos = [
 function App() {
   return (
     <>
-      <h1>App</h1>
+      <h1 style={{ fontSize: 28, textAlign: "center", margin: 0, padding: 24 }}>
+        Todo List
+      </h1>
+      <TodoCounter completed={3} total={10} />
+
+      <div className="section-todo">
+        <TodoSearch />
+        <CreateTodoButton />
+        <TodoList>
+          {defaultTodos &&
+            defaultTodos.map(({ text, completed }) => (
+              <TodoItem key={text} text={text} completed={completed} />
+            ))}
+        </TodoList>
+      </div>
     </>
   );
 }
