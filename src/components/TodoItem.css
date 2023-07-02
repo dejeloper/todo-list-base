@@ -9,8 +9,9 @@
 .content-todo-item {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  border: 1px solid;
 }
 .check {
   margin-right: 10px;

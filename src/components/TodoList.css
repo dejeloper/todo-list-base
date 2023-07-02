@@ -4,10 +4,12 @@
   justify-content: center;
   align-items: center;
   max-width: 48rem;
+  min-width: 32rem;
 }
 .ul-todo-list {
   text-align: center;
   list-style: none;
   margin: 0;
   padding: 5px 20px;
+  width: 100%;
 }
