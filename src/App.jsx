@@ -9,10 +9,7 @@ import "./App.css";
 import { useState } from "react";
 
 const defaultTodos = [
-  {
-    text: "Lista 1",
-    completed: true,
-  },
+  { text: "Lista 1", completed: true },
   { text: "Lista 2", completed: true },
   { text: "Lista 3", completed: true },
   { text: "Lista 4", completed: false },
@@ -40,12 +37,19 @@ const defaultTodos = [
 
 function App() {
   const [todos, setTodos] = useState(defaultTodos);
-  const [search, setSearch] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
   const completeTodos = todos.filter((todo) => todo.completed).length;
   const allTodos = todos.length;
 
-  console.log(search);
+  const searchTodos = todos.filter((todo) => {
+    const todoText = todo.text.toLocaleLowerCase();
+    const searchText = searchValue.toLocaleLowerCase();
+
+    return todoText.includes(searchText);
+  });
+
+  console.log(searchValue);
   return (
     <>
       <h1 style={{ fontSize: 28, textAlign: "center", margin: 0, padding: 24 }}>
@@ -54,11 +58,11 @@ function App() {
       <TodoCounter completed={completeTodos} total={allTodos} />
 
       <div className="section-todo">
-        <TodoSearch search={search} setSearch={setSearch} />
+        <TodoSearch search={searchValue} setSearch={setSearchValue} />
         <CreateTodoButton />
         <TodoList>
-          {defaultTodos &&
-            defaultTodos.map(({ text, completed }) => (
+          {searchTodos &&
+            searchTodos.map(({ text, completed }) => (
               <TodoItem key={text} text={text} completed={completed} />
             ))}
         </TodoList>

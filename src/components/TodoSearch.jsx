@@ -1,12 +1,19 @@
 import "./TodoSearch.css";
 
-export const TodoSearch = ({ params }) => {
+export const TodoSearch = ({ search, setSearch }) => {
+  const handleChange = (event) => {
+    event.preventDefault();
+    setSearch(event.target.value);
+  };
+
   return (
     <>
       <input
         className="input-text-todo"
         type="text"
-        placeholder="Tarea pendiente"
+        value={search}
+        placeholder="Buscar en Tareas"
+        onChange={handleChange}
       />
     </>
   );
