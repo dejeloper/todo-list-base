@@ -6,10 +6,11 @@ import {
   TodoSearch,
 } from "./components";
 import "./App.css";
+import { useState } from "react";
 
 const defaultTodos = [
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    text: "Lista 1",
     completed: true,
   },
   { text: "Lista 2", completed: true },
@@ -30,7 +31,7 @@ const defaultTodos = [
   { text: "Lista 17", completed: true },
   { text: "Lista 18", completed: false },
   { text: "Lista 19", completed: true },
-  { text: "Lista 10", completed: false },
+  { text: "Lista 20", completed: false },
   { text: "Lista 21", completed: true },
   { text: "Lista 22", completed: false },
   { text: "Lista 23", completed: true },
@@ -38,15 +39,22 @@ const defaultTodos = [
 ];
 
 function App() {
+  const [todos, setTodos] = useState(defaultTodos);
+  const [search, setSearch] = useState("");
+
+  const completeTodos = todos.filter((todo) => todo.completed).length;
+  const allTodos = todos.length;
+
+  console.log(search);
   return (
     <>
       <h1 style={{ fontSize: 28, textAlign: "center", margin: 0, padding: 24 }}>
         Todo List
       </h1>
-      <TodoCounter completed={3} total={10} />
+      <TodoCounter completed={completeTodos} total={allTodos} />
 
       <div className="section-todo">
-        <TodoSearch />
+        <TodoSearch search={search} setSearch={setSearch} />
         <CreateTodoButton />
         <TodoList>
           {defaultTodos &&
