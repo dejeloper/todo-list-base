@@ -23,6 +23,7 @@
   text-align: center;
   cursor: pointer;
   color: #af4c4c;
+  user-select: none;
 }
 .c-completed {
   color: #4caf50;
